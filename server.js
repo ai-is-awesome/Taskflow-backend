@@ -1,12 +1,9 @@
-import express from "express";
 import { ApolloServer } from "@apollo/server";
 import { startStandaloneServer } from "@apollo/server/standalone";
 
 import { typeDefs } from "./schema.js";
-import { data } from "./data.js";
-import { MongoDataSource } from "./MongoDataSource.js";
 
-const app = express();
+import { MongoDataSource } from "./MongoDataSource.js";
 
 const PORT = 3001;
 
@@ -35,7 +32,7 @@ const { url } = await startStandaloneServer(server, {
       token,
     };
   },
-  listen: { port: 3001 },
+  listen: { port: PORT },
 });
 
 console.log(`🚀  Server ready at: ${url}`);
