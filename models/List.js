@@ -1,10 +1,9 @@
 import mongoose, { mongo } from "mongoose";
 
 const listSchema = mongoose.Schema({
-  listName: String,
-  items: [String],
+  name: String,
+  items: [{ type: mongoose.Schema.Types.ObjectId, ref: "Item" }],
   createDate: Date,
-  boardId: { type: mongoose.Schema.Types.ObjectId, ref: "Board" },
   numberOfItems: Number,
 });
 
