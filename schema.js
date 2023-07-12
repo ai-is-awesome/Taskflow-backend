@@ -9,7 +9,7 @@ export const typeDefs = `#graphql
   type List {
     name : String
     _id: String
-    items: Item
+    items: [Item]
   }
 
   type Query {
@@ -39,7 +39,6 @@ export const typeDefs = `#graphql
     title: String!,
     listId: String!
   }
- 
 `;
 
 export const resolvers = {
@@ -52,7 +51,7 @@ export const resolvers = {
   },
   List: {
     items: async (parent, args, context) => {
-      return { title: "Example Title, yet to hook fetch function" };
+      return [{ title: "Example Title, yet to hook fetch function" }];
     },
   },
 

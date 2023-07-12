@@ -6,7 +6,6 @@ const listSchema = mongoose.Schema({
   createDate: Date,
   numberOfItems: Number,
 });
-
 const List = mongoose.model("List", listSchema);
 
 export default List;
